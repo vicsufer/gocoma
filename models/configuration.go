@@ -2,6 +2,7 @@ package models
 
 import (
 	"github.com/spf13/viper"
+	"sort"
 )
 
 var Conf *Configuration
@@ -9,6 +10,15 @@ var Conf *Configuration
 type Configuration struct {
 	CurrentEnv string `mapstructure: "currentenv"`
 	Environments map[string] Environment `mapstructure:"environments"`
+}
+
+func (conf *Configuration) GetEnvsNames() []string {
+	envNames := make([]string, 0, len(conf.Environments))
+	for name := range conf.Environments {
+		envNames = append(envNames, name )
+	}
+	sort.Strings(envNames)
+	return envNames
 }
 
 func (conf *Configuration) GetEnv(e string) Environment {

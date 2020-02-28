@@ -14,7 +14,7 @@ var lsCmd = &cobra.Command{
 	Long: `To add new environments update the .gocoma.yml file in your home directory`,
 	Run: func(cmd *cobra.Command, args []string) {
 
-		for env := range models.Conf.Environments {
+		for _, env := range models.Conf.GetEnvsNames() {
 			currentEnvFlag := "    "
 			if models.Conf.CurrentEnv == env {
 				currentEnvFlag = "(*) "
