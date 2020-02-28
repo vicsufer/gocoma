@@ -1,18 +1,3 @@
-/*
-Copyright © 2020 NAME HERE @vicsufer
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
 package cmd
 
 import (
@@ -24,9 +9,6 @@ import (
 	"os"
 )
 
-var Conf *models.Configuration
-
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "gocoma",
 	Short: "gocoma is a tool for managing cloud environments",
@@ -34,7 +16,6 @@ var rootCmd = &cobra.Command{
 
 If it is the first time running gocoma, please run the command:
   gocoma init`,
-	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//Run: func(cmd *cobra.Command, args []string) {},
 }
@@ -62,7 +43,7 @@ func initConfig() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	// Search config in home directory with name ".gocoma" (without extension).
+	// Search config in home directory
 	viper.AddConfigPath(home)
 	viper.SetConfigName(".gocoma")
 	viper.SetConfigType("yml")
@@ -72,10 +53,10 @@ func initConfig() {
 	if err := viper.ReadInConfig(); err != nil && os.Args[1] != "init" {
 		rootCmd.Help()
 		fmt.Printf("The file .gocoma.yml is not detected, please run:\n  gocoma init\n")
-		os.Exit(0)
+		os.Exit(1)
 	} else {
-		Conf = &models.Configuration{}
-		err = viper.Unmarshal(&Conf)
+		models.Conf = &models.Configuration{}
+		err = viper.Unmarshal(&models.Conf)
 		if err != nil {
 			fmt.Printf("unable to decode into config struct, %v", err)
 		}

@@ -4,6 +4,8 @@ import (
 	"github.com/spf13/viper"
 )
 
+var Conf *Configuration
+
 type Configuration struct {
 	CurrentEnv string `mapstructure: "currentenv"`
 	Environments map[string] Environment `mapstructure:"environments"`
