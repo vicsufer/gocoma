@@ -22,7 +22,7 @@ file in the home directory.`,
 		selectedEnv := args[0]
 
 		if models.Conf.SetCurrentEnv(selectedEnv) {
-			fmt.Printf("Environment changed to %s\n", Conf.CurrentEnv)
+			fmt.Printf("Environment changed to %s\n", models.Conf.CurrentEnv)
 		} else {
 			fmt.Println("Selected environment not available, available environments are:")
 			lsCmd.Run(cmd, []string{})
