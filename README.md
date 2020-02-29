@@ -32,9 +32,13 @@ gocoma <command> --help
 ```
 ### init
 Generate the `.gocoma.yml` file in the user home directory. This command will not override an existing `.gocoma.yml` file.
-### ls
 ```sh
 gocoma init
+```
+### ls
+List the available environments, it prefix the current environment with `(*)`
+```sh
+gocoma ls
 ```
 ### use
 Change the current environment, gocoma will add the specified identity file into the SSH agent, and will generate configuration files for the supported tools, which at this time are
