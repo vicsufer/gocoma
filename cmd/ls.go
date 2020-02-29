@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
-	"gocoma/models"
+	"github.com/vicsfuer/gocoma/models"
 )
 
 

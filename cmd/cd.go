@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
-	"gocoma/models"
-	"gocoma/utils"
+	"github.com/vicsufer/gocoma/models"
+	"github.com/vicsufer/gocoma/utils"
 )
 
 // cdCmd represents the cd command

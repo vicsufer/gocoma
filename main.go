@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gocoma/cmd"
+	"github.com/vicsfuer/gocoma/cmd"
 )
 
 func main() {

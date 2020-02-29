@@ -5,7 +5,7 @@ import (
 	"github.com/mitchellh/go-homedir"
 	"os"
 	"os/exec"
-	"gocoma/utils"
+	"github.com/vicsufer/gocoma/utils"
 )
 
 type Environment struct {

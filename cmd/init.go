@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"gocoma/models"
+	"github.com/vicsufer/gocoma/models"
 )
 
 // initCmd represents the init command
