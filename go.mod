@@ -1,4 +1,4 @@
-module gocoma
+module github.com/vicsufer/gocoma
 
 go 1.13
 
