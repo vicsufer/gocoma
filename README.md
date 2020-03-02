@@ -60,7 +60,7 @@ Gocoma needs a special file `.gocoma.yml` in your home directory. It can create 
 The format of the `.gocoma.yml` file is pretty straighforward:
 ```yml
 currentenv: another_environment
-environments
+environments:
     environment:
       aws_identity_file: "/path/to/pem/file/my_project.pem"
       aws_secret_access_key: "YOURSECRETACCESSKEY"
